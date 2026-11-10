@@ -1,7 +1,7 @@
-from db.board import BOARD
+from db.board import BOARD,WINNING_LINES
 from tic_tac_toc_game.inputs import get_num
 from tic_tac_toc_game.validates import is_not_empty,is_in_range
-from tic_tac_toc_game.manage_game import check_draw,check_win,update_board,check_if_index_empty,WINNING_LINES
+from tic_tac_toc_game.manage_game import check_draw,check_win,update_board,check_if_index_empty
 from tic_tac_toc_game.result import shaw_board,print_draw_msg,print_winning_msg
 def main():
     sing = "X"
