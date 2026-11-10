@@ -7,7 +7,7 @@ def main():
     sing = "X"
     while True:
         shaw_board(BOARD)
-        num = get_num(f"player {sing} enter your choice")
+        num = get_num(f"player {sing} enter your choice(1-9)")
         if check_if_index_empty(BOARD,num):
             update_board(BOARD,num,sing)
         else:
