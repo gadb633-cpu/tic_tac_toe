@@ -14,9 +14,11 @@ def main():
             continue
         if check_win(BOARD,WINNING_LINES,sing):
             print_winning_msg(sing)
+            shaw_board(BOARD)
             break
         elif check_draw(BOARD):
             print_draw_msg()
+            shaw_board(BOARD)
             break
         sing = "O" if sing == "X" else "X"
 
