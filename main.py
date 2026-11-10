@@ -3,7 +3,15 @@ from tic_tac_toc_game.inputs import get_num
 from tic_tac_toc_game.validates import is_not_empty,is_in_range
 from tic_tac_toc_game.manage_game import check_draw,check_win,update_board,check_if_index_empty
 from tic_tac_toc_game.result import shaw_board,print_draw_msg,print_winning_msg
+import logging
+logging.basicConfig(
+    filename="app.log",
+    level=logging.INFO,
+    format="%(asctime)s %(levelname)-8s %(message)s",
+    encoding="utf-8")
+
 def main():
+    logging.info("start game")
     sing = "X"
     while True:
         shaw_board(BOARD)
@@ -15,10 +23,12 @@ def main():
         if check_win(BOARD,WINNING_LINES,sing):
             print_winning_msg(sing)
             shaw_board(BOARD)
+            logging.info("win!!")
             break
         elif check_draw(BOARD):
             print_draw_msg()
             shaw_board(BOARD)
+            logging.info("draw")
             break
         sing = "O" if sing == "X" else "X"
 
